@@ -1,2 +1,2 @@
-# stocks
+# stonks
 Stock Info and Analyzer
