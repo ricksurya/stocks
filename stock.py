@@ -11,3 +11,4 @@ class Stock:
 
     def getName(self):
         return self.info.get("shortName")
+
