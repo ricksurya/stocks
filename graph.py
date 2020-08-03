@@ -24,10 +24,12 @@ def graphLineChart(stock: st.Stock):
     prices = stock.stock.history(period=PERIOD, interval=INTERVAL)
     prices['Close'].plot(figsize=(16, 9))
 
+    plt.rc('figure', titlesize=48)
     plt.xlabel("Date")
     plt.ylabel("Price ($)")
-    plt.title(stock.getName() + " Price Chart", **{'fontname':'Comic Sans MS'})
+    plt.title(stock.getName() + " Price Chart")
 
     ax = plt.gca()
-    ax.set_facecolor('xkcd:light blue')
+    ax.set_facecolor('xkcd:pale blue')
+    plt.grid()
     plt.show()

@@ -33,14 +33,16 @@ def getInfo(infoType: str, tickers: List[str]):
     for ticker in tickers:
         try:
             get(infoType, ticker)
-        except IndexError:
+        except Exception:
             raise Exception("ERROR: couldn't perform action on the ticker=" + ticker + " ¯\_(ツ)_/¯")
 
 
 def get(infoType: str, ticker: str):
+    stock = st.Stock(ticker)
     if infoType ==  "price":
-        stock = st.Stock(ticker)
         print(stock.getName() + ": " + str(stock.getPrice()))
+    elif infoType == "pe":
+        print(stock.getName() + ": " + str(stock.getPeRatio()))
     else:
         raise ValueError("The information type=" + infoType + " is not supported")
     
