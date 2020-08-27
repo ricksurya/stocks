@@ -43,6 +43,8 @@ def get(infoType: str, ticker: str):
         print(stock.getName() + ": " + str(stock.getPrice()))
     elif infoType == "pe":
         print(stock.getName() + ": " + str(stock.getPeRatio()))
+    elif infoType == "rsi":
+        print(stock.getName() + ": " + str(stock.getRsi()))
     else:
         raise ValueError("The information type=" + infoType + " is not supported")
     
